@@ -65,8 +65,10 @@
 */
 
 $route['default_controller'] = 'welcome';
-$route['blog/(:any)'] = 'blog/index/$1';
-$route['page/(:any)'] = 'page/index/$1';
+$route['blog/([a-zA-Z_-]+)'] = 'blog/index/$1';
+$route['page/([a-zA-Z_-]+)'] = 'page/index/$1';
+$route['admin/([a-zA-Z_-]+)/(:any)'] = '$1/admin/$2';
+$route['admin/([a-zA-Z_-]+)'] = '$1/admin/index';
 $route['404_override'] = '';
 
 /* End of file routes.php */
